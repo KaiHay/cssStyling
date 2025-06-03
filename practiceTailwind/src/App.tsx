@@ -51,19 +51,25 @@ export const Task = ({ task, onClick }: taskProps): JSX.Element => {
 }
 
 const TaskList = (): JSX.Element => {
-  const [taskList, setTaskList] = useState(exList)
+  const sortedExampleList = exList.sort((task1, task2) => task1.checked ? -1 : 1)
+  const [taskList, setTaskList] = useState(sortedExampleList)
 
   function checkTask(idx: number) {
     const newTaskList = structuredClone(taskList)
     newTaskList[idx].checked = !newTaskList[idx].checked
     // re-order the tasks
-    setTaskList(newTaskList)
-  }
+    const orderedTaskList = newTaskList.sort((task1, task2) => task1.checked ? -1 : 1)
+    setTaskList(orderedTaskList)
 
+  }
   return (
-    <div>
+    <div className='flex flex-col pl-5'>
       {taskList.map((task, idx) => {
-        return <Task task={task} onClick={() => checkTask(idx)} />
+        return (
+          <div className='pb-3'>
+            <Task task={task} onClick={() => checkTask(idx)} />
+          </div>
+        )
       })}
       {/* {JSON.stringify(taskList)} */}
     </div>
