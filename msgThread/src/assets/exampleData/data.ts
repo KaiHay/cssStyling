@@ -16,7 +16,7 @@ const exampleMessage3: Message = {
     me: false
 }
 const exampleMessage4: Message = {
-    content: 'I was wondering how much text i can put in the message and have the messages extend the lengthaaaaaaaaaaaaaaaaaaaaaa',
+    content: 'I was wondering how much text i can put in the message and have the messages extend the lengthaaaaaaaaaaaaaaaaaaaaasdadadasdasdaaaaaasfdfsdfdfsfdsfsdfdsfdsfsfd',
     person: 'bob',
     me: false
 }
